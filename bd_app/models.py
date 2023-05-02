@@ -8,7 +8,10 @@ class dueño_model (models.Model):
 
 
     dueño= models.CharField(max_length=50,blank = True)  
-   
+    
+    
+    def __str__(self)-> str:
+         return self.dueño 
 
  
     
@@ -67,6 +70,8 @@ class datos_propiedad_model(models.Model):
     
     titular = models.CharField(max_length=50,null=True,blank=False)
     
+    
+   
     
 
 
