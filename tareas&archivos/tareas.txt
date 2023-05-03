@@ -1,0 +1,24 @@
+1 parte para inquilinos
+2 casas
+
+
+
+tareas franco:
+crear los modelos para el principal
+
+-ambientes
+-precios
+-mas info(como baños etc)
+
+- hacer el 'add' en view
+
+
+tareas nahuel:
+hacer formulario para ingresar los datos (franco)
+agregar ojo  al lado de editar para ver todos los datos de la casa (franco)
+
+
+
+link de la pagina inspiradora
+https://www.zonaprop.com.ar/q-32-la-plata.html
+https://www.behance.net/gallery/145573979/UIUX-design-for-Ametnes-Cloud?tracking_source=search_projects%7Cdatabase+ui+ux
