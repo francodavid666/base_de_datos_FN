@@ -1,0 +1,238 @@
+/* RESET DE LA WEB */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    font-family: 'Urbanist', sans-serif;
+  }
+/* MODIFICA EL HEADER */
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    background-color: #19A7CE;
+}
+
+header div.div__nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+header div.div__nav .h2__nav{
+    padding: 0 40px;
+    color: white;
+}
+
+header div.div__nav .dropdown{
+    display: inline-block;
+    position: relative;
+}
+
+header div.div__nav .dropdown .btn-agregar{
+    width: 8vw;
+    height: 4vh;
+    color: white;
+    font-size: 18px;
+    background-color: transparent;
+
+}
+
+header div.div__nav .dropdown .btn-agregar:hover{
+    background-color: #146C94;
+}
+
+header div.div__nav .dropdown-contenido{
+    display: none;
+    position: absolute;
+    width: 100%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, alpha0.2);
+}
+
+.dropdown:hover .dropdown-contenido{
+    display: block;
+    background-color: #F6F1F1;
+}
+
+.dropdown-contenido a{
+    display: block;
+    color: black;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.dropdown-contenido a:hover{
+    background-color: #146C94;
+    color: white;
+}
+
+/*MODIFICO MAIN Y TABLA*/
+
+main{
+    display: flex;
+    justify-content: center;
+    background-color: #c7c7c7;
+    
+}
+
+.main__container {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    grid-template-rows: repeat(1,1fr);
+    margin: 20px;
+    width: 100vw;
+    height: 80%;
+    justify-content: center;
+    background-color: #0896e9;
+    border-radius: 10px;
+}
+
+.database{
+    grid-column: 1/2;
+    grid-row: 1/2;
+
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+    /*background-color:#19A7CE ;*/
+    height: 100%;
+
+}
+
+.titulo_database{
+ color: red;
+
+}
+/*
+main .main__container .database nav {
+    width: 70vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}*/
+
+.btns{
+    grid-column: 2/3;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 30px;
+}
+.btn_refresh{
+   
+    width: 8vw;
+    border: none;
+    height: 6vh;
+    border-radius: 5px;
+    background-color: aliceblue;
+    color: blue;
+    border: 2px solid blue;
+    grid-column: 2/3;
+}
+
+.btn_crear_nuevo{
+    width: 8vw;
+    height: 3vh;
+    border: none;
+    height: 6vh;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}
+
+.db__btn_container{
+    grid-column: 2/3;
+
+    height: 50px;
+
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ width: 68vw;
+
+ 
+ }
+.buscar_campo{
+    border: none;
+    width: 300px;
+    height: 6vh;
+    border-radius: 5px;
+}
+
+.select__uno{
+    width: 8vw;
+    height: 6vh;
+  
+    border: none;
+    border-radius: 5px;
+}
+
+/*
+
+main .main__container .database nav h4{
+    margin: 10px 0 0 20px;
+    color: black;
+    font-size: 23px;
+}*/
+
+/*
+source.btn-2{
+    background-color: #1746A2;
+    color: white;
+    width: 8vw;
+    height: 3vh;
+    cursor: pointer;
+}*/
+
+main .main__container .filtro {
+    display: flex;
+    padding: 20px 0;
+    width: 68vw;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+main .main__container .filtro div input {
+    width: 15vw;
+    height: 3vh;
+}
+
+
+
+.tabla__main {
+    grid-row: 2/3;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    margin: 10px auto;
+ 
+    width: 95vw;
+    height: 62vh;
+    justify-content: center;
+    border-radius: 20px ;
+}
+
+.tabla__main table {
+    margin-top: 20px;
+    table-layout: fixed;
+    width: 70vw;
+    height: 10vh;
+    border-collapse: collapse;
+    border-bottom: solid 1px #F1F6F9;
+    text-align: left;
+}
+ 
+main .tabla__main table thead th{
+    border-bottom: solid 1px #F1F6F9;
+    padding: 10px 0;
+}
+
+main .tabla__main table tbody td{
+    border-bottom: solid 1px #F1F6F9;
+    padding: 10px 0;
+}
