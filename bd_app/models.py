@@ -2,16 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-class dueño_model (models.Model):
-
-   
-
-
-    dueño= models.CharField(max_length=50,blank = True)  
-    
-    
-    def __str__(self)-> str:
-         return self.dueño 
 
  
     
@@ -48,17 +38,34 @@ class datos_propiedad_model(models.Model):
               (CONSULTORIO, 'Consultorio'),
               ]
     
+    
+    DIS='Disponible'
+    ALQ='Alquilado'
+    ENAL= 'En alquiler'
+    ENV= 'En venta'
+    POR = 'Por vender'
+    VN= 'Vendido'
+    
+    OPCIONES_ESTADO=[(DIS,'Disponible'),
+                     (ENAL,'En alquiler'),
+                     (ALQ,'Alquilado'),
+                     (ENV,'En venta'),
+                     (POR,'Por vender'),
+                     (VN,'Vendido')]
+    id = models.AutoField(primary_key=True)
+    dueño= models.CharField(max_length=50,blank=True)                   
     tipo = models.CharField(choices=OPCIONES,
                             max_length=50,
                             default=CASA,
                             null=True,
-                            blank = True)
+                            blank = True) 
     
-    dueño=models.ForeignKey(dueño_model,
-                            on_delete=models.CASCADE,
-                            null=False,blank=False)
     
-    direccion = models.CharField(max_length=50,blank = True,null=True)
+    estado = models.CharField(max_length=50,null=True,blank=False,
+                              choices=OPCIONES_ESTADO,
+                              default=DIS,)
+    direccion = models.CharField(max_length=50,null=True,blank=False)
+    descripcion= models.CharField(max_length=200,null=True,blank=False)
     pais= models.CharField(max_length=50,blank = True,null=True)
     provincia = models.CharField(max_length=50,blank = True,null=True)
     localidad = models.CharField(max_length=50,blank = True,null=True)
@@ -70,12 +77,6 @@ class datos_propiedad_model(models.Model):
     
     titular = models.CharField(max_length=50,null=True,blank=False)
     
-    
-   
-    
-
-
-class caracteristica_propiedad_model(models.Model):
     
     MN='Monoambiente'
     DOS='2 Ambientes'
@@ -90,9 +91,7 @@ class caracteristica_propiedad_model(models.Model):
                         (CINCO,'5 Ambientes')]
     
     
-    propiedad = models.ForeignKey(datos_propiedad_model,
-                            on_delete=models.CASCADE,
-                            null=False,blank=False)
+    propiedad = models.CharField(max_length=200,null=True,blank=False)
     
     
     ambientes= models.CharField(max_length=50,null=True,blank=False,
@@ -106,4 +105,13 @@ class caracteristica_propiedad_model(models.Model):
     garage= models.IntegerField(null=True,blank=False)
     sotano=models.IntegerField(null=True,blank=False)
     terrasa= models.IntegerField(null=True,blank=False)
-  
+    
+    descripcion= models.CharField(max_length=200,null=True,blank=False)
+    precio= models.CharField(max_length=20,null=True,blank=False)
+    
+      
+    def __str__(self)-> str:
+         return self.propiedad+' '+ self.direccion
+   
+    
+
