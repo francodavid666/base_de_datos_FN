@@ -9,6 +9,8 @@ from django.db.models import Q
 def inicio (request):
     queryset = request.GET.get('buscar')
    # clientes= datos_propiedad_model.objects.all()
+   
+    clientes = datos_propiedad_model.objects.all()
     clientes= datos_propiedad_model.objects.filter(dueño = True)
     if queryset:
         clientes= datos_propiedad_model.objects.filter(
@@ -21,7 +23,7 @@ def inicio (request):
           Q(dueño__icontains = queryset)
         ).distinct()
     
-
+    
     
     #form = dueño_model.objects.all()
     #form2 = datos_propiedad_model.objects.all()

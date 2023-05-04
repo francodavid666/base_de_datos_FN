@@ -35,7 +35,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background-color: #f6fbff;
 }
 
 .main__container {
@@ -47,7 +47,7 @@ body{
     width: 98%;
     height: 95vh;
     justify-content: center;
-    background-color: #e9e5e5;
+    background-color: #e6f0f9;
     border-radius: 10px;
 }
 
@@ -97,7 +97,7 @@ main .main__container .database nav {
     border: none;
     
     border-radius: 5px;
-    background-color: aliceblue;
+    background-color:  #e9e5e5;
     color: blue;
     border: 2px solid blue;
     grid-column: 2/3;
@@ -105,8 +105,13 @@ main .main__container .database nav {
     margin-left: 90vh;
     width:12vw;
     height: 6vh;
+
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 700; 
     
 }
+
+
 
 .btn_crear_nuevo{
     margin-left: 30px;
@@ -117,7 +122,14 @@ main .main__container .database nav {
     border-radius: 5px;
     background-color: blue;
     color: white;
+
+    
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 700; 
 }
+
+
+
 
 .db__btn_container{
     grid-column: 1/4;
@@ -138,6 +150,41 @@ main .main__container .database nav {
     width: 300px;
     height: 6vh;
     border-radius: 5px;
+
+    text-align: center;
+    box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 700; 
+
+}
+
+.buscar_campo::placeholder {
+ color: #c4d2fb;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+.buscar_campo:focus{
+    outline: none;
+}
+
+
+
+
+.buscar_campo_lupa{
+    position: absolute;
+    top: 143px;
+    left: 40px;
+    color: #c4d2fb;
+}
+
+.select__uno::placeholder{
+    text-align: center;
 }
 
 .select__uno{
@@ -146,6 +193,9 @@ main .main__container .database nav {
  
     border: none;
     border-radius: 5px;
+    box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
 }
 
 
@@ -193,38 +243,52 @@ main .main__container .filtro div input {
     height: 62vh;
     justify-content: center;
     border-radius: 10px ;
+    box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    -moz-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
 }
 
 .tabla__main table {
     margin-top: 20px;
-    table-layout: fixed;
+   
     width: 90vw;
     height: 10vh;
     border-collapse: collapse;
-    border-bottom: solid 1px #1d92d6;
+    border-bottom: solid 0.5px #c4d2fb;
     text-align: left;
+    font-size: 12px;
 }
  
 .tabla__main tr{
     margin-bottom: 40PX;
 }
 main .tabla__main table thead th{
-    border-bottom: solid 1px #0795e7;
+  
     padding: 10px 0;
     display: flex;
     justify-content: center;
+   
 }
 
-main .tabla__main table tbody td{
-    border-bottom: solid 1px #b13016;
-    padding: 10px 0;
-    
+th{
+    padding-bottom: 10px ;
 }
+
+
 
 .tabla__main td{
-    border-bottom: solid 0.5px #036ba7;
+    border-top: solid 0.5px #c4d2fb;
     padding:4px 0;
+    font-size: 12px;
+    padding-bottom: 12px;
+    padding-top: 12px;
+ 
    
    
+}
+
+.edit{
+
+
 }
 

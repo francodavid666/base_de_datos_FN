@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'bd_app\style.css' %}">
+    <link rel="stylesheet" href="{% static 'bd_app\style_2.css' %}">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,96 +10,71 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Urbanist:wght@500&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./style.css">
 
+<!-- CDN Font Awesome-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Proyecto BD</title>
 </head>
 <body>
     
     <header>
 
-        <div class="div__nav">
-
-            <h4 class="img__logo">LOGO</h4>
-
-            <h2 class="h2__nav">BASE DE DATOS INMOBILIARIA</h2>
-
-            <div class="dropdown">
-
-                <button class="btn-agregar">AGREGAR</button>
-
-                <div class="dropdown-contenido">
-                    <a href="">opcion 1</a>
-                    <a href="">opcion 2</a>
-                    <a href="">opcion 3</a>
-                </div>
-
-            </div>
-
-        </div>
-
     </header>
 
-    <main>
+   
         
         <section class="main__container">
 
             <div class="database">
-                <nav>
-                    <div>
+                    
+              
+               
+                <div class="btns">
+                    <h4 class="titulo_database">Database</h4>
+                    <button class="btn-1 btn_refresh">  Refresh</button>
+                    <button class="btn-1 btn_crear_nuevo">  Crear nuevo</button>
+                </div>
 
-                    <h4>Database</h4>
+               
+                   
+                
+                    <div class="db__btn_container">
 
-                    </div>
-
-                    <div class="db__btn">
-                        <span>
-
-                            <button class="btn-1">Refresh</button>
-
-                        </span>
+                        <form action="" method="GET">
+                            <div>
+                                <input type="text" class='buscar_campo' placeholder="  buscar"  name="buscar" values="{{ request.GET.buscar }}">
+                               
+                            </div>
+                        </form>
+               
+                      
+                     
+                        <select name="" id="" class="select__uno">
+                            <option value="">opcion 2</option>
+                        </select>
                         
-                        <span>
-                            
-                            <button class="btn-2">+ Crear nuevo</button>
+                        <select name="" id="" class="select__uno">
+                            <option value="">opcion 1</option>
+                        </select>
+    
+                        <select name="" id="" class="select__dos select__uno">
+                            <option value="">opcion 1</option>
+                        </select>
 
-                        </span>
-                    </div>
-
-                </nav>
+                    </div>    
             </div>
             
-            <div class="filtro">
-                <form action="" method="GET">
-                <div>
-                    <input type="text" placeholder="buscar"  name="buscar" values="{{ request.GET.buscar }}">
-                    <button type="submit">Buscar</button>
-                </div>
-            </form>
-                <div class="select__db">
-
-                    <select name="" id="" class="select__uno">
-                        <option value="">opcion 1</option>
-                    </select>
-                    
-                    <select name="" id="" class="select__uno">
-                        <option value="">opcion 1</option>
-                    </select>
-
-                    <select name="" id="" class="select__dos">
-                        <option value="">opcion 1</option>
-                    </select>
-                </div>
-
-            </div>
+        
 
             <div class="tabla__main">
 
                 <table>
-                    
+                   
                     <thead>
                         <th>Dueño</th>
                         <th>Direccion</th>
                         <th>Localidad</th>
-                        <th>Estadp</th>
+                        <th>Estado</th>
                         <th>Propiedad</th>
                         <th>Tipo</th>
                         <th>Precio</th>
@@ -111,9 +86,9 @@
                     <tbody>
                         {% for i in clientes %}
                         <tr>
-                            {{ i.id }}
+                          
                            
-                            <td>{{ i.id }}</td>
+                            <td>{{ i.dueño }}</td>
                             <td>{{ i.direccion }}</td>
                             <td>{{ i.localidad}}</td>
                             <td>{{ i.estado}}</td>
@@ -122,34 +97,13 @@
                             <td>{{ i.precio }}</td>
                             <td>{{ i.descripcion}}</td>
                           
-                            <td><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></td>
-                            <td><a href="{% url 'delete' i.id %}"  id="{{ i.id }}" > <svg class='buttom_delete'  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(202, 22, 22);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg> </a></td>
-                           
+                            <td class='edit'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></td>
+                            <td class='delete'><a  href="{% url 'delete' i.id %}"  id="{{ i.id }}" > <svg class='buttom_delete'  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg> </a></td>
+                       
                         </tr>
                         {% endfor %}
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td><button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></button></td>
-                            <td><button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg></button></td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>5</td>
-                            <td>6</td>
-                            <td>7</td>
-                            <td><button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></button></td>
-                            <td><button><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg></button></td>
-                        </tr>
-                    </tbody>
+
+ 
 
                 </table>
 
@@ -159,7 +113,9 @@
 
         </section>
 
-    </main>
+ 
+    
+
 
 
 
