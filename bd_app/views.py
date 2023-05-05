@@ -8,28 +8,140 @@ from django.db.models import Q
 
 def inicio (request):
     queryset = request.GET.get('buscar')
-   # clientes= datos_propiedad_model.objects.all()
-   
+ 
+
+  
     clientes = datos_propiedad_model.objects.all()
-    clientes= datos_propiedad_model.objects.filter(dueño = True)
-    if queryset:
+    
+    if queryset: 
+        clientes= datos_propiedad_model.objects.filter(dueño = True)
         clientes= datos_propiedad_model.objects.filter(
           Q(tipo__icontains = queryset) |
           Q(direccion__icontains = queryset) |
           Q(localidad__icontains = queryset) |
+          Q(propiedad__icontains = queryset) |
+          Q(estado__icontains = queryset) |
           Q(tipo__icontains = queryset) |
           Q(precio__icontains = queryset) |
           Q(tipo__icontains = queryset) |
           Q(dueño__icontains = queryset)
         ).distinct()
-    
-    
-    
+        
+        
+   
+      
+        
     #form = dueño_model.objects.all()
     #form2 = datos_propiedad_model.objects.all()
     return render (request,'bd_app/inicio.html',{'clientes':clientes})
 
 
+def inicio_za (request):
+  
+  
+  
+      queryset = request.GET.get('buscar')
+ 
+
+  
+      clientes= datos_propiedad_model.objects.all().order_by('-tipo')
+    
+      if queryset: 
+          clientes= datos_propiedad_model.objects.filter(dueño = True)
+          clientes= datos_propiedad_model.objects.filter(
+            Q(tipo__icontains = queryset) |
+            Q(direccion__icontains = queryset) |
+            Q(propiedad__icontains = queryset) |
+            Q(localidad__icontains = queryset) |
+            Q(estado__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(precio__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(dueño__icontains = queryset)
+          ).distinct()
+  
+    
+  
+      return render (request,'bd_app/filtros/inicio_za.html',{'clientes':clientes})
+  
+  
+  
+def inicio_mascaro (request):
+  
+      queryset = request.GET.get('buscar')
+ 
+
+  
+      clientes = datos_propiedad_model.objects.all().order_by('precio')
+    
+      if queryset: 
+          clientes= datos_propiedad_model.objects.filter(dueño = True)
+          clientes= datos_propiedad_model.objects.filter(
+            Q(tipo__icontains = queryset) |
+            Q(direccion__icontains = queryset) |
+            Q(localidad__icontains = queryset) |
+            Q(propiedad__icontains = queryset) |
+            Q(estado__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(precio__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(dueño__icontains = queryset)
+          ).distinct()
+  
+    
+  
+      return render (request,'bd_app/filtros/inicio_mascaro.html',{'clientes':clientes})
+
+  
+def inicio_masbarato (request):
+ 
+      queryset = request.GET.get('buscar')
+
+      clientes = datos_propiedad_model.objects.all().order_by('-precio')
+    
+      if queryset: 
+          clientes= datos_propiedad_model.objects.filter(dueño = True)
+          clientes= datos_propiedad_model.objects.filter(
+            Q(tipo__icontains = queryset) |
+            Q(direccion__icontains = queryset) |
+            Q(localidad__icontains = queryset) |
+            Q(propiedad__icontains = queryset) |
+            Q(estado__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(precio__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(dueño__icontains = queryset)
+          ).distinct()
+
+      return render (request,'bd_app/filtros/inicio_masbarato.html',{'clientes':clientes})
+
+
+
+def inicio_caracteristicas(request):
+  
+      queryset = request.GET.get('buscar')
+      if queryset: 
+          clientes= datos_propiedad_model.objects.filter(dueño = True)
+          clientes= datos_propiedad_model.objects.filter(
+            Q(tipo__icontains = queryset) |
+            Q(direccion__icontains = queryset) |
+            Q(localidad__icontains = queryset) |
+            Q(propiedad__icontains = queryset) |
+            Q(estado__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(precio__icontains = queryset) |
+            Q(tipo__icontains = queryset) |
+            Q(dueño__icontains = queryset)
+          ).distinct()
+  
+  
+      clientes = datos_propiedad_model.objects.all()
+      return render (request,'bd_app/filtros/inicio_caracteristicas.html',{'clientes':clientes})
+
+def inicio_refresh(request):
+  
+      clientes = datos_propiedad_model.objects.all()
+      return render (request,'bd_app/botones_header/inicio_refresh.html',{'clientes':clientes})
 
 
 def edit(request):
