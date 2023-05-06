@@ -39,7 +39,7 @@
                     </a>-->
 
                             <button class="btn-1 btn_refresh">  Refresh</button>
-                    <button class="btn-1 btn_crear_nuevo">  Crear nuevo</button>
+                    <button id="btn-crear" class="btn-1 btn_crear_nuevo">  Crear nuevo</button>
                 </div>
 
                
@@ -262,14 +262,73 @@
         </section>
 
  
-    <div class="ventana-modal">
-        <div class="modal-contenido">
-            <form action="">
+    <div id="ventana-modal" class="ventana-modal">
 
-            </form>
+        <div class="modal-contenido">
+
+            <div class="cabecera-modal">
+
+                <div class="titulo-modal">
+                    <h2>Cargar datos</h2>
+                </div>
+
+                <div id="cerrar" class="cerrar"><h2>X</h2></div>
+
+            </div>
+
+            <div class="form-modal">
+                <form id="formulario">
+                    <div>
+                        <label for="">Dueño</label>
+                        <div id="info1"></div>
+                        <input id="dueño" type="text">
+                    </div>
+                    <div>
+                        <label for="">Direccion</label>
+                        <div id="info2"></div>
+                        <input id="direccion" type="text">
+                    <div>
+                        <label for="">Localidad</label>
+                        <div id="info3"></div>
+                        <input id="localidad" type="text">
+                    </div>
+                    <div>
+                        <label for="">Estado</label>
+                        <select name="" id="estado">
+                            <option value="disponible">disponible</option>
+                            <option value="alquilado">alquilado</option>
+                            <option value="en alquiler">en alquiler</option>
+                            <option value="en venta">en venta</option>
+                            <option value="por vender">por vender</option>
+                            <option value="vendido">vendido</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="">Propiedad</label>
+                        <div id="info4"></div>
+                        <input id="propiedad" type="text">
+                    </div>
+                        <label for="">Tipo</label>
+                        <div id="info5"></div>
+                        <input id="tipo" type="text">
+                    </div>
+                    <div>
+                        <label for="">Precio</label>
+                        <div id="info6"></div>
+                        <input id="precio" type="number">
+                    </div>
+                        <label for="">Descripcion</label>
+                        <div id="info7"></div>
+                        <input id="descripcion" type="text">
+                    </div>
+                    <div id="btn-carga">
+                        <button id="btnCarga" type="submit">Cargar</button>
+                    </div>
+                </form>
+            </div>
+
         </div>
     </div>
-
 
 
 
