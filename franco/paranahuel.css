@@ -109,6 +109,7 @@ main .main__container .database nav {
     font-family: "Font Awesome 5 Free"; 
     font-weight: 700; 
     
+    cursor: pointer;
 }
 
 
@@ -122,6 +123,7 @@ main .main__container .database nav {
     border-radius: 5px;
     background-color: blue;
     color: #e6f0f9;
+    cursor: pointer;
 
     
     font-family: "Font Awesome 5 Free"; 
@@ -372,4 +374,48 @@ position:  relative;
   
 transform: scaleX(1);
 transform-origin: bottom left;
+}
+
+
+/* MODAL DEL FORM */
+
+
+.punto-verde {
+    background-color: green;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    height: 10px;
+    margin: 2px auto -2px -14px;
+    width: 10px;
+}
+
+.punto-azul {
+    background-color: blue;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    height: 10px;
+    margin: 2px auto -2px -14px;
+    width: 10px;
+}
+
+.punto-rojo {
+    background-color: red;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    height: 10px;
+    margin: 2px auto -2px -14px;
+    width: 10px;
+}
+
+.punto-naranja {
+    background-color: orange;
+    border-radius: 50%;
+    box-sizing: border-box;
+    position: absolute;
+    height: 10px;
+    margin: 2px auto -2px -14px;
+    width: 10px;
 }

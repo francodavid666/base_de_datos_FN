@@ -3,13 +3,15 @@
 <head>
     {% load static %}
   
-    <link rel="stylesheet" href=".\franco\paranahuel.css">
+    <link rel="stylesheet" href="./paranahuel.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Urbanist:wght@500&display=swap" rel="stylesheet">    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Urbanist:wght@500&display=swap" rel="stylesheet">
+    <script src="./jquery.js"></script>
+    <script src="./main.js" defer></script>
 
 <!-- CDN Font Awesome-->
 
@@ -151,7 +153,7 @@
                             <td>{{ i.dueño }}</td>
                             <td>{{ i.direccion }}</td>
                             <td>{{ i.localidad}}</td>
-                            <td>{{ i.estado}}</td>
+                            <td>disponible</td>
                             <td>{{ i.propiedad }}</td>
                             <td>{{ i.tipo }}</td>
                             <td>{{ i.precio }}</td>
@@ -163,7 +165,93 @@
                         </tr>
                         {% endfor %}
 
- 
+                        
+                        <tr>
+                          
+                           
+                            <td>{{ i.dueño }}</td>
+                            <td>{{ i.direccion }}</td>
+                            <td>{{ i.localidad}}</td>
+                            <td>alquilado</td>
+                            <td>{{ i.propiedad }}</td>
+                            <td>{{ i.tipo }}</td>
+                            <td>{{ i.precio }}</td>
+                            <td>{{ i.descripcion}}</td>
+                          
+                            <td class='edit'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></td>
+                            <td class='delete'><a  href="{% url 'delete' i.id %}"  id="{{ i.id }}" > <svg class='buttom_delete'  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg> </a></td>
+                       
+                        </tr>
+                        
+
+                        
+                        <tr>
+                          
+                           
+                            <td>{{ i.dueño }}</td>
+                            <td>{{ i.direccion }}</td>
+                            <td>{{ i.localidad}}</td>
+                            <td>en alquiler</td>
+                            <td>{{ i.propiedad }}</td>
+                            <td>{{ i.tipo }}</td>
+                            <td>{{ i.precio }}</td>
+                            <td>{{ i.descripcion}}</td>
+                          
+                            <td class='edit'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></td>
+                            <td class='delete'><a  href="{% url 'delete' i.id %}"  id="{{ i.id }}" > <svg class='buttom_delete'  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg> </a></td>
+                       
+                        </tr>
+
+                        <tr>
+                          
+                           
+                            <td>{{ i.dueño }}</td>
+                            <td>{{ i.direccion }}</td>
+                            <td>{{ i.localidad}}</td>
+                            <td>en venta</td>
+                            <td>{{ i.propiedad }}</td>
+                            <td>{{ i.tipo }}</td>
+                            <td>{{ i.precio }}</td>
+                            <td>{{ i.descripcion}}</td>
+                          
+                            <td class='edit'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></td>
+                            <td class='delete'><a  href="{% url 'delete' i.id %}"  id="{{ i.id }}" > <svg class='buttom_delete'  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg> </a></td>
+                       
+                        </tr>
+
+                        <tr>
+                          
+                           
+                            <td>{{ i.dueño }}</td>
+                            <td>{{ i.direccion }}</td>
+                            <td>{{ i.localidad}}</td>
+                            <td>por vender</td>
+                            <td>{{ i.propiedad }}</td>
+                            <td>{{ i.tipo }}</td>
+                            <td>{{ i.precio }}</td>
+                            <td>{{ i.descripcion}}</td>
+                          
+                            <td class='edit'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></td>
+                            <td class='delete'><a  href="{% url 'delete' i.id %}"  id="{{ i.id }}" > <svg class='buttom_delete'  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg> </a></td>
+                       
+                        </tr>
+
+                        <tr>
+                          
+                           
+                            <td>{{ i.dueño }}</td>
+                            <td>{{ i.direccion }}</td>
+                            <td>{{ i.localidad}}</td>
+                            <td>vendido</td>
+                            <td>{{ i.propiedad }}</td>
+                            <td>{{ i.tipo }}</td>
+                            <td>{{ i.precio }}</td>
+                            <td>{{ i.descripcion}}</td>
+                          
+                            <td class='edit'><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="m18.988 2.012 3 3L19.701 7.3l-3-3zM8 16h3l7.287-7.287-3-3L8 13z"></path><path d="M19 19H8.158c-.026 0-.053.01-.079.01-.033 0-.066-.009-.1-.01H5V5h6.847l2-2H5c-1.103 0-2 .896-2 2v14c0 1.104.897 2 2 2h14a2 2 0 0 0 2-2v-8.668l-2 2V19z"></path></svg></td>
+                            <td class='delete'><a  href="{% url 'delete' i.id %}"  id="{{ i.id }}" > <svg class='buttom_delete'  xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(116, 116, 116);transform: ;msFilter:;"><path d="M6 7H5v13a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7H6zm4 12H8v-9h2v9zm6 0h-2v-9h2v9zm.618-15L15 2H9L7.382 4H3v2h18V4z"></path></svg> </a></td>
+                       
+                        </tr>
 
                 </table>
 
@@ -174,7 +262,13 @@
         </section>
 
  
-    
+    <div class="ventana-modal">
+        <div class="modal-contenido">
+            <form action="">
+
+            </form>
+        </div>
+    </div>
 
 
 
