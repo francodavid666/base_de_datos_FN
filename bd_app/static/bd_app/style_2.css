@@ -397,3 +397,129 @@ transform: scaleX(1);
 transform-origin: bottom left;
 
 }
+
+
+
+/*FORMULARIO*/
+
+
+
+.form_datos{
+    display: flex;
+    grid-column:1/4;
+    grid-row: 0/2;
+    margin-top: 30px;
+  
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    }
+    
+    
+
+   
+    
+    .ficha_tec{
+     margin-left: 20px;
+      background-color: #323C50;
+      border-radius:30px ;
+    }
+    
+    .cobros{
+      margin-left: 20px;
+      background-color: #1F2739;
+      border-radius:30px ;
+    }
+    
+    .form-group{
+      margin: 10px;
+      
+      display: flex;
+      align-items: center;
+    }
+    
+    .form-group label {
+    
+     color: #0960e2;
+     
+    }
+    
+    .form-group p {
+     color:#86868B;
+     font-size: 10px;
+     width: 100px;
+     margin:8%;
+     padding-right:30px;
+     }
+    
+    .boton{
+      color:#86868B;
+      margin-left: 25%;
+    }
+    
+    h3{
+      color:#86868B;
+      margin-left: 25%;
+    }
+    
+    .cobros h3{
+      color:#86868B;
+       margin-left: 40%;
+       border-radius:30px ;
+     }
+
+
+/*FORM PERSONALES*/
+
+.personales{
+    background-color: #1F2739;
+    border-radius:30px ;
+    height: 400px;
+}
+
+.personales input{
+    border: none;
+    border-radius: 5px;
+}
+
+
+.form_personales select{
+    border: none;
+    border-radius: 5px;
+    color: red;
+    background-color: red;
+}
+
+
+/*FORM CATASTRALES*/
+
+.form_catastrales{
+    background-color: #1F2739;
+    border-radius:30px ;
+    height: 400px;
+}
+
+.form_catastrales input{
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+/*FORM CARACTERISTICA*/
+
+.form_caracteristicas{
+    background-color: #1F2739;
+    border-radius:30px ;
+    height: 400px;
+       
+}    
+
+.form_caracteristicas input{
+  
+    border: none;
+    border-radius: 5px;
+
+   
+    text-align: center;
+}

@@ -1,0 +1,146 @@
+{% extends 'bd_app/inicio.html' %}{% block titulo %}
+
+
+<h4 class="titulo_database">Formulario agregar cliente</h4>
+{% endblock %}
+
+
+
+{% block tabla %}
+
+<form class ="form_datos" action="{% url 'form_edit' id %}"  method = "POST">{% csrf_token %}
+
+    
+
+    <section class ="personales">
+
+     <h3>Datos Personales</h3>
+          <div class="form-group">
+            <label><p>Dueño:</p></label>
+            {{ form.dueño }}
+        </div>
+        <div class="form-group">
+            <label><p>Tipo:</p></label>
+            {{ form.tipo }}
+        </div>
+        <div class="form-group">
+            <label><p>Estado:</p></label>
+            {{ form.estado }}
+        </div>
+        <div class="form-group">
+            <label><p>Direccion:</p></label>
+            {{ form.direccion }}
+        </div>
+        <div class="form-group">
+            <label><p>Descripcion:</p> </label>
+            {{ form.descripcion }}
+         </div>
+          <div class="form-group">
+          <label class = 'genero'><p>Pais:</p></label>
+          {{ form.pais }}
+           </div>
+          <div class="form-group">
+          <label><p>Provincia:</p> </label>
+          {{ form.provincia }}
+          </div>
+          <div class="form-group">
+            <label><p>Localidad:</p> </label>
+            {{ form.localidad }}
+          </div>
+        </section>
+
+          <section class ="form_catastrales">
+            
+            <div class="form-group">
+                <label><p>Descripcion:</p> </label>
+                {{ form.descripcion }}
+              </div>
+
+            <div class="form-group">
+                <label><p>Propiedad:</p> </label>
+                {{ form.propiedad }}
+              </div>
+          <div class="form-group">
+            <label><p>Parcela:</p> </label>
+            {{ form.parcela }}
+          </div>
+          <div class="form-group">
+            <label><p>Lote:</p> </label>
+            {{ form.lote }}
+          </div>
+          <div class="form-group">
+            <label><p>Tamaño:</p> </label>
+            {{ form.tamaño }}
+          </div>
+          <div class="form-group">
+            <label><p>Metros2:</p> </label>
+            {{ form.metros2 }}
+          </div>
+          <div class="form-group">
+            <label><p>Clave Fiscal:</p> </label>
+            {{ form.clave_c }}
+          </div>
+          <div class="form-group">
+            <label><p>Titular:</p> </label>
+            {{ form.titular }}
+          </div>
+
+          <div class="form-group">
+            <label><p>Precio:</p> </label>
+            {{ form.precio }}
+          </div>
+
+          <button type ="submit" class="boton">Guardar cambios</button>
+
+        </section>
+
+
+
+        <section class ="form_caracteristicas">
+
+       
+          <div class="form-group">
+            <label><p>Ambientes:</p> </label>
+            {{ form.ambientes }}
+          </div>
+    
+          <div class="form-group">
+            <label><p>Baños:</p> </label>
+            {{ form.baños }}
+          </div>
+          <div class="form-group">
+            <label><p>Dormitorios:</p> </label>
+            {{ form.dormitorios }}
+          </div>
+          <div class="form-group">
+            <label><p>Cocina:</p> </label>
+            {{ form.cocina }}
+          </div>
+          <div class="form-group">
+            <label><p>Living:</p> </label>
+            {{ form.living }}
+          </div>
+          <div class="form-group">
+            <label><p>Comedor:</p> </label>
+            {{ form.comedor }}
+          </div>
+          <div class="form-group">
+            <label><p>Garage:</p> </label>
+            {{ form.garage }}
+          </div>
+          <div class="form-group">
+            <label><p>Sotano:</p> </label>
+            {{ form.sotano }}
+          </div>
+          <div class="form-group">
+            <label><p>Terrasa:</p> </label>
+            {{ form.terrasa }}
+          </div>
+
+        
+        
+  
+        </section>
+
+        </form>
+{% endblock %}

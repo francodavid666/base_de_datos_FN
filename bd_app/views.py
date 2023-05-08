@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 
 from .models import *
+from bd_app.forms import *
 from django import forms
 from django.db.models import Q
 # Create your views here.
@@ -617,59 +618,58 @@ def inicio_masbarato (request):
 
 
 
-def edit(request):
-  propiedad= datos_propiedad_model.get(id=id)
+def form_edit(request,id):
+  propiedad= datos_propiedad_model.objects.get(id=id)
   if request.method == 'POST':
-    
     form = datos_propiedad_form(request.POST)
     if form.is_valid():
       info = form.cleaned_data
-      
       propiedad.dueño=info['dueño']
       propiedad.tipo=info['tipo']
       propiedad.estado=info['estado']
+      propiedad.direccion=info['direccion']
       propiedad.pais=info['pais']
       propiedad.provincia=info['provincia']
-      propiedad.localidado=info['localidad']
+      propiedad.localidad=info['localidad']
       propiedad.parcela=info['parcela']
       propiedad.lote=info['lote']
       propiedad.tamaño=info['tamaño']
       propiedad.metros2=info['metros2']
-      propiedad.clave=info['clave']
-      
-      
+      propiedad.clave_c=info['clave_c']
       propiedad.titular=info['titular']
       propiedad.propiedad=info['propiedad']
       propiedad.ambientes=info['ambientes']
       propiedad.baños=info['baños']
       propiedad.dormitorios=info['dormitorios']
       propiedad.cocina=info['cocina']
-      propiedad.living=info['comedor']
+      propiedad.living=info['living']
+      propiedad.comedor=info['comedor']
       propiedad.garage=info['garage']
       propiedad.sotano=info['sotano']
       propiedad.terrasa=info['terrasa']
       propiedad.descripcion=info['descripcion']
       propiedad.precio=info['precio']
       
-      
+
       propiedad.save()
-      return('inicio')
-    else:
-      messages.info(request,'Algo salio mal')
+      clientes=datos_propiedad_model.objects.all()
+      return render (request,'bd_app/inicio.html',{'clientes':clientes})
+   
             #return redirect ('inicio')
           
           
   form= datos_propiedad_form(initial={'dueño':propiedad.dueño,
                                       'tipo': propiedad.tipo,
                                       'estado': propiedad.estado,
+                                      'direccion': propiedad.direccion,
                                       'pais': propiedad.pais,
                                       'provincia' :propiedad.provincia,
-                                      'localidado': propiedad.localidado,
+                                      'localidad': propiedad.localidad,
                                       'parcela': propiedad.parcela,
                                       'lote': propiedad.lote,
                                       'tamaño' : propiedad.tamaño,
                                       'metros2' : propiedad.metros2,
-                                      'clave' : propiedad.clave, 
+                                      'clave_c' : propiedad.clave_c, 
                                       
                                       
                                       'titular':propiedad.titular,
@@ -679,13 +679,15 @@ def edit(request):
                                       'dormitorios' : propiedad.dormitorios,
                                       'cocina' : propiedad.cocina,
                                       'living' : propiedad.living,
+                                      'comedor' : propiedad.comedor,
                                       'garage' : propiedad.garage,
                                       'sotano' : propiedad.sotano,
                                       'terrasa' : propiedad.terrasa,
                                       'descripcion' : propiedad.descripcion,
-                                      'precio'  : propiedad.precio,
-                                      
+                                      'precio'  : propiedad.precio             
                                       })
+      
+  return render (request,'bd_app/form_edit.html',{'form':form,'id':id})
       
   
 
@@ -701,4 +703,78 @@ def delete(request,id):
     return render (request,'bd_app/inicio.html',{'clientes':clientes})
   
   
+  
+  
+  #form_add
+  
+def form_add(request):
+      if request.method=='POST':
+                  formulario = datos_propiedad_form(request.POST)
+                  if formulario.is_valid():
+                        info=formulario.cleaned_data
+                        dueño = info.get("dueño")
+                        tipo = info.get("tipo")
+                        estado=info.get('estado')
+                        direccion=info.get('direccion')
+                        descripcion= info.get("descripcion")
+                        pais=info.get('pais')
+                        provincia=info.get('provincia')
+                        localidad=info.get('localidad')
+                        parcela=info.get('parcela') 
+                        lote=info.get('lote') 
+                        tamaño=info.get('tamaño') 
+                        metros2=info.get('metros2') 
+                        clave_c=info.get('clave_c') 
+                        titular=info.get('titular') 
+                        propiedad=info.get('propiedad') 
+                        ambientes=info.get('ambientes') 
+                        baños=info.get('baños') 
+                        dormitorios=info.get('dormitorios') 
+                        cocina=info.get('cocina') 
+                        living=info.get('living') 
+                        comedor=info.get('comedor') 
+                        garage=info.get('garage') 
+                        sotano=info.get('sotano') 
+                        terrasa=info.get('terrasa') 
+                        descripcion=info.get('descripcion') 
+                        precio=info.get('precio') 
+                              
+                              
+                        home_1=datos_propiedad_model(
+                              dueño=dueño,
+                              tipo = tipo,
+                              estado=estado,
+                              direccion=direccion,
+                              pais=pais,
+                              provincia=provincia,
+                              localidad=localidad,
+                              parcela=parcela,
+                              lote=lote,
+                              tamaño=tamaño,
+                              metros2=metros2,
+                              clave_c=clave_c,
+                              titular=titular,
+                              propiedad=propiedad,
+                              ambientes=ambientes,
+                              baños=baños,
+                              dormitorios=dormitorios,
+                              cocina=cocina,
+                              living=living,
+                              comedor=comedor,
+                              garage=garage,
+                              sotano=sotano,
+                              terrasa=terrasa,
+                              descripcion=descripcion,
+                              precio=precio,
+                              )
+                        home_1.save()
+                        clientes= datos_propiedad_model.objects.all()
+                        return render (request,'bd_app/inicio.html',{'clientes':clientes})
+
+                        
+                        
+                        
+      form= datos_propiedad_form()
+      return render (request,'bd_app/form_add.html',{'form':form})
+
   

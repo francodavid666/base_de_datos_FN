@@ -14,8 +14,14 @@ urlpatterns =[
     path('inicio_refresh/',inicio_refresh,name='inicio_refresh'),
     path('inicio_propiedades/',inicio_propiedades,name='inicio_propiedades'),
     path('propiedades_za/',propiedades_za,name='propiedades_za'),
-    #direccion
     
+    #formulario
+    path('form_add/',form_add,name='form_add'),
+    path('form_edit/<id>',form_edit,name='form_edit'),
+    
+    
+    #direccion
+
     path('dueño_az/',dueño_az,name='dueño_az'),
     path('dueño_za/',dueño_za,name='dueño_za'),
     

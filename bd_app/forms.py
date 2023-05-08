@@ -6,6 +6,6 @@ from django.conf import settings
 
 class datos_propiedad_form(forms.ModelForm):
 
-    class META: 
+    class Meta: 
         model= datos_propiedad_model
         fields= '__all__'
