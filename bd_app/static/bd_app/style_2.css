@@ -35,19 +35,19 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f6fbff;
+    background-color: #edeff1;
 }
 
 .main__container {
     display: grid;
     grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(1,1fr);
+    grid-template-rows: repeat(1,20px,1fr);
      
     margin: 10px 10px 10px 10px;
     width: 98%;
     height: 95vh;
     justify-content: center;
-    background-color: #e6f0f9;
+    background-color: #edeff1;
     border-radius: 10px;
 }
 
@@ -60,22 +60,15 @@ body{
     grid-template-rows: repeat(2,50px);
     /*background-color:#19A7CE ;*/
     height: 70%;
-    width: 95vw;
-   margin-top: 70px;
+    width: 98vw;
+    margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
     border-radius: 10px;
 
 }
 
-.titulo_database{
- grid-column: 1/2;
- grid-row: 0/1;
- color: rgb(32, 32, 32);
- font-size: 40px;
- 
 
-}
 /*
 main .main__container .database nav {
     width: 70vw;
@@ -86,11 +79,26 @@ main .main__container .database nav {
 
 .btns{
     grid-column: 1/4;
-    display: flex;
+   /* display: flex;
     justify-content: space-between;
+    align-items: center;
+    text-align: center;*/
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(1,100px);
     
     
 }
+
+.titulo_database{
+    grid-column: 1/2;
+
+    color: blue;;
+    font-size: 22px;
+    width: 500px;
+    
+   
+   }
 .btn_refresh{
    
    
@@ -101,8 +109,9 @@ main .main__container .database nav {
     color: blue;
     border: 2px solid blue;
     grid-column: 2/3;
-    
-    margin-left: 90vh;
+    grid-row: 1/2;
+    margin-left: 110%;
+
     width:12vw;
     height: 6vh;
 
@@ -114,7 +123,10 @@ main .main__container .database nav {
 
 
 .btn_crear_nuevo{
-    margin-left: 30px;
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+    margin-left: 160%;
     width:12vw;
     height: 6vh;
     border: none;
@@ -152,9 +164,9 @@ main .main__container .database nav {
     border-radius: 5px;
 
     text-align: center;
-    box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
+    -webkit-box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
+    -moz-box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
     
     font-family: "Font Awesome 5 Free"; 
     font-weight: 700; 
@@ -188,9 +200,9 @@ main .main__container .database nav {
  
     border: none;
     border-radius: 5px;
-    box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 12px -7px rgba(0,0,0,0.34);
+    -webkit-box-shadow: 10px 10px 12px -7px rgba(0,0,0,0.34);
+    -moz-box-shadow: 10px 10px 12px -7px rgba(0,0,0,0.34);
 }
 
 
@@ -234,13 +246,13 @@ main .main__container .filtro div input {
     margin: 10px auto;
     margin-bottom: 10px;
  
-    width: 95vw;
-    height: 62vh;
+    width: 98vw;
+    height: 75vh;
     justify-content: center;
-    border-radius: 10px ;
-    box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    border-radius: 8px ;
+    box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
+    -webkit-box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
+    -moz-box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
 }
 
 .tabla__main table {
@@ -282,6 +294,12 @@ th{
    
 }
 
+.tabla__main a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
 
 .menu__horizontal{
     list-style: none;
@@ -297,9 +315,9 @@ th{
 
     border: none;
     border-radius: 5px;
-    box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -webkit-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
-    -moz-box-shadow: 13px 15px 29px -8px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
+    -webkit-box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
+    -moz-box-shadow: 4px 4px 5px -2px rgba(0,0,0,0.18);
 
 }
 
@@ -310,12 +328,15 @@ th{
 
     color: #282828;
     text-decoration: none;
-
+    transition: 2s;
+    opacity: 1;
     
 }
 
 
 .menu__horizontal >li:hover{
+    transition: 1s;
+    opacity: 0.5;
 
     text-decoration:none;
 }
@@ -349,14 +370,17 @@ th{
 }
 
 .underline{
-    color: rgb(0, 255, 72);
-
 display: inline-block;
 position:  relative;
 }
 
+.underline  p{
+    color: #c4d2fb;
+}
+
 .underline:after{
     content: '';
+    
     position: absolute;
     width: 95%;
     height:2px ;
@@ -369,7 +393,7 @@ position:  relative;
 }
 
 .underline:hover:after{
-  
 transform: scaleX(1);
 transform-origin: bottom left;
+
 }

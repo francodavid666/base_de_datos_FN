@@ -1,0 +1,80 @@
+{% extends 'bd_app/inicio.html' %}
+
+
+
+
+
+
+
+
+
+{% block navbar %}
+
+<nav class="navBar">
+
+    <ul class="menu__horizontal">
+       
+        <li>
+            <a href="" class="underline">Dueñosss</a>
+            <ul class="menu__vertical">
+                <li>
+                    <form action="" method="GET">
+                    <a href="{% url 'inicio' %}" class="underline"  values="az">A-Z</a>
+                    <a href="{% url 'inicio_za' %}" class="underline">Z-A</a>
+                
+                </form>
+                </li>
+            </ul>
+        </li>
+      
+    </ul>
+    </nav>
+   <!-- <option value="">opcion 2</option>
+    <a href="#"><option value="">opcion 3</option></a>-->
+
+
+    <nav class="navBar">
+
+        <ul class="menu__horizontal">
+           
+            <li>
+                <a href="" class="underline">Propiedades</a>
+                <ul class="menu__vertical">
+                    <li>
+                       
+                        <a href="{% url 'inicio' %}" class="underline"  values="az">A-Z</a>
+                        <a href="{% url 'inicio_za' %}" class="underline">Z-A</a>
+                        <a href="{% url 'inicio_mascaro' %}" class="underline">Mas caro</a>
+                        <a href="{% url 'inicio_masbarato' %}" class="underline">Mas Barato</a>
+                      
+                    </li>
+                </ul>
+            </li>
+          
+        </ul>
+        </nav>
+
+        <nav class="navBar">
+
+            <ul class="menu__horizontal">
+               
+                <li>
+                    <a href="" class="underline">Caracteristicas</a>
+                    <ul class="menu__vertical">
+                        <li>
+                           
+                            <a href="{% url 'inicio_caracteristicas' %}" class="underline"  values="az">Ambientes</a>
+                            <a href="{% url 'inicio_za' %}" class="underline">D.Catastrales</a>
+                          
+                        </li>
+                    </ul>
+                </li>
+              
+            </ul>
+            </nav>
+
+         
+
+</div>    
+</div>
+{% endblock %}

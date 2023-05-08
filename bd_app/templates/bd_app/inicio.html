@@ -30,12 +30,14 @@
               
                
                 <div class="btns">
+                    {% block titulo %}
                     <h4 class="titulo_database">Database</h4>
+                    {% endblock %}
                  <!--   <a href="{% url 'inicio_refresh' %}">
                         <button class="btn-1 btn_refresh">  Refresh</button>
                     </a>-->
 
-                            <button class="btn-1 btn_refresh">  Refresh</button>
+                    <button class="btn-1 btn_refresh">  Refresh</button>
                     <button class="btn-1 btn_crear_nuevo">  Crear nuevo</button>
                 </div>
 
@@ -46,7 +48,7 @@
 
                         <form action="" method="GET">
                             <div>
-                                <input type="text" class='buscar_campo' placeholder="  buscar"  name="buscar" values="{{ request.GET.buscar }}">
+                                <input type="text" class='buscar_campo' placeholder="  buscar"  name="buscar" value="{{ request.GET.buscar }}">
                                
                             </div>
                         
@@ -55,19 +57,19 @@
                       
                      
                      
-
+                            {% block navbar %}
 
                         <nav class="navBar">
 
                             <ul class="menu__horizontal">
                                
                                 <li>
-                                    <a href="" class="underline">Dueño</a>
+                                    <a href="" class="underline"><p>Dueño</p> </a>
                                     <ul class="menu__vertical">
                                         <li>
                                             <form action="" method="GET">
-                                            <a href="{% url 'inicio' %}" class="underline"  values="az">A-Z</a>
-                                            <a href="{% url 'inicio_za' %}" class="underline">Z-A</a>
+                                            <a href="{% url 'dueño_az' %}" class="underline"  values="az">A-Z</a>
+                                            <a href="{% url 'dueño_za' %}" class="underline">Z-A</a>
                                         
                                         </form>
                                         </li>
@@ -85,14 +87,14 @@
                                 <ul class="menu__horizontal">
                                    
                                     <li>
-                                        <a href="" class="underline">Propiedades</a>
+                                        <a href="{% url 'inicio_propiedades' %}" class="underline"><p>Propiedades</p></a>
                                         <ul class="menu__vertical">
                                             <li>
                                                
-                                                <a href="{% url 'inicio' %}" class="underline"  values="az">A-Z</a>
-                                                <a href="{% url 'inicio_za' %}" class="underline">Z-A</a>
-                                                <a href="{% url 'inicio_mascaro' %}" class="underline">Mas caro</a>
-                                                <a href="{% url 'inicio_masbarato' %}" class="underline">Mas Barato</a>
+                                                <a href="{% url 'propiedad_az' %}" class="underline"  values="az"><p>A-Z</p></a>
+                                                <a href="{% url 'propiedad_za' %}" class="underline"><p>Z-A</p></a>
+                                                <a href="{% url 'precio_az' %}" class="underline"><p>Mas caro</p></a>
+                                                <a href="{% url 'precio_za' %}" class="underline"><p>Mas barato</p></a>
                                               
                                             </li>
                                         </ul>
@@ -106,12 +108,12 @@
                                     <ul class="menu__horizontal">
                                        
                                         <li>
-                                            <a href="" class="underline">Caracteristicas</a>
+                                            <a href="" class="underline"><p>Caracteristicas</p></a>
                                             <ul class="menu__vertical">
                                                 <li>
                                                    
                                                     <a href="{% url 'inicio_caracteristicas' %}" class="underline"  values="az">Ambientes</a>
-                                                    <a href="{% url 'inicio_za' %}" class="underline">D.Catastrales</a>
+                                                    <a href="{% url 'inicio' %}" class="underline">D.Catastrales</a>
                                                   
                                                 </li>
                                             </ul>
@@ -119,6 +121,8 @@
                                       
                                     </ul>
                                     </nav>
+
+                                    {% endblock %}
 
                     </div>    
             </div>
@@ -130,16 +134,18 @@
                 <table>
                    
                     <thead>
-                        <th> <a href="{% url 'inicio_za' %}"> Dueño</th></a>
-                        <th>Direccion</th>
-                        <th>Localidad</th>
-                        <th>Estado</th>
-                        <th>Propiedad</th>
-                        <th>Tipo</th>
-                        <th> <a href="{% url 'inicio_mascaro' %}"> Precio</th></a>
-                        <th>Descripcion</th>
-                        <th>Editar</th>
-                        <th>Eliminar</th>
+                        <th> <a href="{% url 'dueño_za' %}"> Dueño</th></a>
+                        <th ><a href="{% url 'direccion_za' %}" >Direccion</th></a>
+                        <th ><a href="{% url 'localidad_za' %}" >Localidad</th></a>
+                     
+                        <th ><a href="{% url 'estado_za' %}" >Estado</th></a>
+                        <th ><a href="{% url 'propiedad_za' %}" >Propiedad</th></a>
+                        <th ><a href="{% url 'tipo_za' %}" >Tipo</th></a>
+
+                        <th> <a href="{% url 'precio_za' %}"> Precio</th></a>
+                        <th ><a href="{% url 'descripcion_za' %}" >Descripcion</th></a>
+                        <th ><a href="{% url 'inicio' %}" >Editar</th></a>
+                        <th ><a href="{% url 'inicio' %}" >Eliminar</th></a>
                     </thead>
 
                     <tbody>
@@ -174,6 +180,8 @@
 
  
     
+<script src="{% static 'bd_app\scripts\main.js' %}"></script>
+<script src="{% static 'bd_app\scripts\jquery.js' %}"></script>
 
 
 
